@@ -2,7 +2,7 @@
 const fs = require("fs");
 const { OpenAI } = require("openai");
 
-const openai = new OpenAI({ apiKey: process.env.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 });
+const openai = new OpenAI({ apiKey: process.env.OPENAI_KEY });
 
 // Load past product performance and trends
 function loadHistoricalTrends() {
