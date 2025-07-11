@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require("fs");
 const puppeteer = require("puppeteer-extra");
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
@@ -74,3 +76,10 @@ async function scrapeRegion(region, config) {
     await scrapeRegion(region, config);
   }
 })();
+
+async function run() {
+  const strategy = await getScrapingStrategy();
+  console.log(JSON.stringify(strategy));
+}
+
+run();
