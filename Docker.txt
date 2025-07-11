@@ -45,3 +45,15 @@ EXPOSE 3000
 # Start the app
 CMD ["node", "index.js"]
 
+# Existing commands...
+
+# Copy autoscraper files into /app folder
+COPY autoscraper/ai-planner.js /app/ai-planner.js
+COPY autoscraper/smart-scraper.js /app/smart-scraper.js
+COPY autoscraper/ai-validator.js /app/ai-validator.js
+COPY autoscraper/performance-db.js /app/performance-db.js
+COPY autoscraper/auto-scale.js /app/auto-scale.js
+
+# Optionally copy strategy.json or ads.json if you have them
+# COPY autoscraper/strategy.json /app/strategy.json
+# COPY autoscraper/ads.json /app/ads.json
