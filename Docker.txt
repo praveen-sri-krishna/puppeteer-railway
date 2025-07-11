@@ -35,8 +35,6 @@ COPY . .
 # Expose port
 EXPOSE 3000
 
-# Add Puppeteer stealth plugin and proxy-chain
-RUN npm install puppeteer-extra puppeteer-extra-plugin-stealth proxy-chain
 
 # Start the app
 CMD ["node", "index.js"]
