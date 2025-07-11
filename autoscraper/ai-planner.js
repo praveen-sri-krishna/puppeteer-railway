@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const fs = require("fs");
 const { OpenAI } = require("openai");
 
@@ -60,3 +61,10 @@ getStrategy()
     console.error("❌ Error generating strategy:", err);
     process.exit(1);
   });
+
+async function run() {
+  const strategy = await getScrapingStrategy();
+  console.log(JSON.stringify(strategy));
+}
+
+run();
