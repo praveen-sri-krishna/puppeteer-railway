@@ -1,3 +1,6 @@
+console.log("Current file directory:", __dirname);
+console.log("Current file path:", __filename);
+
 const express = require("express");
 const puppeteer = require("puppeteer");
 
