@@ -34,7 +34,7 @@ Return a JSON list of top 5 validated ads with:
   `;
 
   const response = await openai.chat.completions.create({
-    model: "gpt-4.1-mini",
+    model: "gpt-4-1106-preview",
     response_format: { type: "json_object" },
     messages: [
       { role: "system", content: "You are an expert in ad trend detection." },
