@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require("fs");
 const { OpenAI } = require("openai");
 require("dotenv").config();
@@ -51,3 +53,10 @@ Return a JSON list of top 5 validated ads with:
     await validateAdsForRegion(region);
   }
 })();
+
+async function run() {
+  const strategy = await getScrapingStrategy();
+  console.log(JSON.stringify(strategy));
+}
+
+run();
