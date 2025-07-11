@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require("fs");
 const path = require("path");
 const { updatePerformance } = require("./performance-db");
@@ -39,10 +41,18 @@ async function autoScale(region) {
     ].join(","));
   }
 
-  // ✏️ Save results for review
+  // Save results for review
   const csvFile = path.join(OUTPUT_DIR, `scalable-${region}.csv`);
   fs.writeFileSync(csvFile, ["Title,Likes,Hook,Score,Region,Time", ...csvLines].join("\n"));
   console.log(`✅ Scalable ads for ${region} saved to ${csvFile}`);
 }
 
 module.exports = { autoScale };
+
+async function run() {
+  const strategy = await getScrapingStrategy();
+  console.log(JSON.stringify(strategy));
+}
+
+run();
+
