@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require("fs");
 const path = require("path");
 const DB_PATH = path.join(__dirname, "db/performance.json");
@@ -48,3 +50,10 @@ module.exports = {
   updatePerformance,
   getPerformanceInsights
 };
+
+async function run() {
+  const strategy = await getScrapingStrategy();
+  console.log(JSON.stringify(strategy));
+}
+
+run();
