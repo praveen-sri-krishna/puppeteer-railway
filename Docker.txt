@@ -33,12 +33,11 @@ RUN npm install \
     puppeteer-extra-plugin-stealth \
     proxy-chain
 
-# Copy everything (including autoscraper)
+# ✅ Copy entire project (including autoscraper folder)
 COPY . /app/
 
 # Expose port
 EXPOSE 3000
 
-# Start main app
+# Start the main app
 CMD ["node", "index.js"]
-
