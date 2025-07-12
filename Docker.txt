@@ -34,7 +34,7 @@ RUN npm install \
     proxy-chain
 
 # Copy everything (including autoscraper)
-COPY . .
+COPY . /app/
 
 # Expose port
 EXPOSE 3000
